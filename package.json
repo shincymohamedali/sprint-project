@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.0.0",
+    "@angular/animations": "^15.2.10",
     "@angular/common": "^15.0.0",
     "@angular/compiler": "^15.0.0",
     "@angular/core": "^15.0.0",
@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "bootstrap": "^5.3.3",
-    "ngrx-toastr": "^2.2.9",
+    "ngx-toastr": "^15.2.2",
     "rxjs": "~7.5.0",
     "toastr": "^2.1.4",
     "tslib": "^2.3.0",

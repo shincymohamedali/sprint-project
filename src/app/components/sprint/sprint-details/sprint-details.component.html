@@ -1,4 +1,6 @@
-<!-- <div class="container">
+<div class="container">
+  <h5>{{sprintData.sprintName}}</h5>
+  <ng-container *ngIf="sprintStories.length>0;else noSprints">
     <div class="list-wrapper">
         <div class="list-item" *ngFor="let story of sprintStories">
           <div class="story-header">
@@ -8,4 +10,10 @@
         <div class="story-description">{{ story.storyDescription }}</div>
         </div>
     </div>
-</div> -->
+  </ng-container>
+  <ng-template #noSprints>
+    <div class="no-data">
+      No Stories assigned.
+    </div>
+  </ng-template>
+</div>

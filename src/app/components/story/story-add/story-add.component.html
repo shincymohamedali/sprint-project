@@ -1,5 +1,4 @@
 <div class="container">
-    <a routerLink="/Menu" class="btn btn-secondary btn-sm m-2">Back</a>  <!-- Example to go to 'menu' route -->
     <h5>Add Story</h5>
     <form [formGroup]="storyForm">
         <div class="form-group">
@@ -22,6 +21,5 @@
             placeholder="Story Description">
         </div>
         <button class="btn btn-primary m-2" (click)="addStory()" [disabled]="storyForm.invalid">ADD STORY</button>
-        <small class="text-success m-2" *ngIf="showMessage">Story Details Added Successfully</small>
     </form>
 </div>

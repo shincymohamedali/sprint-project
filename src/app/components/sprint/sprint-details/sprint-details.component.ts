@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Sprint } from 'src/app/models/sprint.model';
+import { Story } from 'src/app/models/story.model';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
@@ -7,14 +10,25 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
   styleUrls: ['./sprint-details.component.css']
 })
 export class SprintDetailsComponent implements OnInit {
-  constructor(private service:LocalStorageService){
+  sprintData!: Sprint;
+  sprintStories: Story[] = [];
+
+  constructor(private service:LocalStorageService,private route:ActivatedRoute){
 
   }
   ngOnInit(): void {
+    this.getSprintData();
     this.getSprintStories();
   }
-sprintStories: any;
 getSprintStories(){
-// this.sprintStories=this.service.getSprintStories(sprint.id);
+this.sprintStories=this.service.getSprintStories(this.sprintData.id);
+}
+getSprintData(){
+  this.route.queryParams.subscribe((params)=>{
+    this.sprintData = {
+      id: +params['id'], 
+      sprintName: params['name'],
+      sprintPoint: 0, 
+    };})
 }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Story } from 'src/app/models/story.model';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
   styleUrls: ['./story-list.component.css']
 })
 export class StoryListComponent implements OnInit{
-  stories:any;
+  stories:Story[]=[];
   constructor(private service:LocalStorageService){
 
   }
@@ -17,7 +18,6 @@ export class StoryListComponent implements OnInit{
 
   getStories(){
     this.stories=this.service.getStory();
-    debugger
     
   }
 }

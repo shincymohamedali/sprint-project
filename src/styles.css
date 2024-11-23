@@ -37,10 +37,10 @@ form {
     border: none;
     border-radius: 5px;
   }
-
   .container h5
 {
     color: #094063;
+    margin-bottom:100px;
 } 
 .item{
     display: flex; 
@@ -78,6 +78,7 @@ form {
 .story-header {
     display: flex;
     gap:18px;
+    padding-left: 8px;
   }
   
   /* Style for the story name */
@@ -96,4 +97,10 @@ form {
     font-size: 14px;
     line-height: 1.5;
     color: #dcdcdc; /* Lighter text for the description */
+  }
+  .no-data {
+    text-align: center;
+    color: gray;
+    font-style: italic;
+    margin-top: 20px;
   }

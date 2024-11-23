@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SprintAddComponent } from './components/sprint/sprint-add/sprint-add.component';
 import { SprintListComponent } from './components/sprint/sprint-list/sprint-list.component';
 import { SprintDetailsComponent } from './components/sprint/sprint-details/sprint-details.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { SprintDetailsComponent } from './components/sprint/sprint-details/sprin
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule, 
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

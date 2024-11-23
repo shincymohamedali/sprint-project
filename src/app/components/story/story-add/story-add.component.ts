@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { Story } from 'src/app/models/story.model';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
@@ -10,11 +12,12 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 export class StoryAddComponent implements OnInit {
   storyForm!:FormGroup;
   showMessage:boolean=false;
-  constructor(private service:LocalStorageService){
+  constructor(private service:LocalStorageService,private toastr: ToastrService){
 
   }
   ngOnInit(): void {
       this.createStoryForm();
+
   }
 
   createStoryForm(){
@@ -25,28 +28,19 @@ export class StoryAddComponent implements OnInit {
   })
   }
   addStory(){
-    debugger;
     let newId:number=1;
-    let storyData=this.service.getStory();
-    let storyName = this.storyForm.get('storyName')?.value;  
-    if(storyData && storyData.length>0){
-      const existingStory = storyData.find((story: any) => story.storyName === storyName);
-      if (existingStory) {
-        alert('duplicate story name') 
-        return;    
-     }
+    let storyData: Story[] = this.service.getStory() || [];
+        if(storyData && storyData.length>0){
       newId = storyData.length > 0 ? Math.max(...storyData.map((story:any) => story.id)) + 1 : 1;
     }
-      let data={...this.storyForm.getRawValue(),
+    const newStory: Story={...this.storyForm.getRawValue(),
         id:newId,
-        sprintId:0
+        sprintId:0 //initially assigning 0 to storyid as story is not assigned to any sprint
     }
-    this.service.setStory(data);
+    this.service.setStory(newStory);
     this.showMessage=true;
     this.storyForm.reset();
-    setTimeout(() => {
-      this.showMessage=false;
+    this.toastr.success('Story added successfully!', 'Success');
 
-    }, 3000);
   }
 }

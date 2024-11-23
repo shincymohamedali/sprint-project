@@ -1,6 +1,7 @@
 <div class="container">
     <h5>Stories</h5>
-    <div class="list-wrapper">
+    <ng-container *ngIf="stories.length > 0; else noStories">
+      <div class="list-wrapper">
       <div class="list-item" *ngFor="let story of stories">
         <div class="story-header">
           <span class="story-name">{{ story.storyName }}</span>
@@ -9,4 +10,10 @@
         <div class="story-description">{{ story.storyDescription }}</div>
       </div>
     </div>
+  </ng-container>
+  <ng-template #noStories>
+    <div class="no-data">
+      No Stories Available.
+    </div>
+  </ng-template>
   </div>
