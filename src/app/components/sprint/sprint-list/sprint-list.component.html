@@ -1,0 +1,11 @@
+<div class="container">
+    <h5>Sprints</h5>
+    <div class="list-wrapper">
+        <div class="list-item" *ngFor="let sprint of sprints" (click)="onSelectSprint(sprint)">
+          <div class="story-header">
+          <span class="story-name">{{ sprint.sprintName }}</span>
+          <span class="story-points">Points: {{ sprint.sprintPoint }}</span>
+        </div>
+        </div>
+    </div>
+</div>

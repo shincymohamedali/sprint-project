@@ -1,0 +1,12 @@
+<div class="container">
+    <h5>Stories</h5>
+    <div class="list-wrapper">
+      <div class="list-item" *ngFor="let story of stories">
+        <div class="story-header">
+          <span class="story-name">{{ story.storyName }}</span>
+          <span class="story-points">Points: {{ story.storyPoint }}</span>
+        </div>
+        <div class="story-description">{{ story.storyDescription }}</div>
+      </div>
+    </div>
+  </div>

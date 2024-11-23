@@ -1,1 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width:100vw;
+    flex-direction: column;
+    gap:20px;
+}
+
+  
+form {
+    width: 500px;
+  }
+  
+  .form-group,
+  .formgroup {
+    margin-bottom: 15px; /* Space between inputs */
+  }
+  
+  .container input {
+    width: 100%; 
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #0b4885; 
+    box-sizing: border-box; 
+  }
+  
+  .container button {
+    width: 100%; /* Full-width button */
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #0c4a70; /* Dark blue button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .container h5
+{
+    color: #094063;
+} 
+.item{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: hsl(257, 63%, 17%); 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    width: 100px; 
+    height: 50px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    flex-direction: column;
+}
+.list-item{
+    width: 200px;               
+    height: 100px;                
+    background-color: #3A1D6C;   
+    color: white;                 
+    display: flex;
+    align-items: center;
+    border-radius: 8px;            
+    display: flex;
+    flex-direction: column;
+    padding:5px 0;
+    
+}
+.list-wrapper{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;   
+    cursor: pointer;
+}
+.story-header {
+    display: flex;
+    gap:18px;
+  }
+  
+  /* Style for the story name */
+  .story-name {
+    font-size: 15px;
+    font-weight:bold;
+  }
+  
+  /* Style for the story points */
+  .story-points {
+    font-size: 12px;
+  }
+  
+  /* Style for the story description */
+  .story-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #dcdcdc; /* Lighter text for the description */
+  }

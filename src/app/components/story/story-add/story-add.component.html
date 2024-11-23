@@ -1,0 +1,27 @@
+<div class="container">
+    <a routerLink="/Menu" class="btn btn-secondary btn-sm m-2">Back</a>  <!-- Example to go to 'menu' route -->
+    <h5>Add Story</h5>
+    <form [formGroup]="storyForm">
+        <div class="form-group">
+            <input type="text" id="storyName" name="storyName" 
+            formControlName="storyName"
+            class="form-control m-2"
+            placeholder="Story Name">
+        </div>
+        <div class="formgroup">
+            <input type="number" id="storyPoint" name="storyPoint" 
+            formControlName="storyPoint"
+            class="form-control m-2"
+            placeholder="Story Point">
+        </div>
+        <div class="formgroup">
+            <input type="text" id="storyDescription" 
+            name="storyDescription" 
+            formControlName="storyDescription"
+            class="form-control m-2"
+            placeholder="Story Description">
+        </div>
+        <button class="btn btn-primary m-2" (click)="addStory()" [disabled]="storyForm.invalid">ADD STORY</button>
+        <small class="text-success m-2" *ngIf="showMessage">Story Details Added Successfully</small>
+    </form>
+</div>
