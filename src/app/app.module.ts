@@ -16,12 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    StoryAddComponent,
-    StoryListComponent,
-    SprintAddComponent,
-    SprintListComponent,
-    SprintDetailsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

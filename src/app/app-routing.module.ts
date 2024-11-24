@@ -19,25 +19,14 @@ pathMatch: 'full'
   component:MenuComponent
   },
   {
-    path:'Story-add',
-    component:StoryAddComponent
+    path:'Story',
+    loadChildren:()=>import('./components/story/story.module').then(m=>m.StorytModule)
   },
   {
-    path:'Story-list',
-    component:StoryListComponent
-  },
-  {
-    path:'Sprint-add',
-    component:SprintAddComponent
-  },
-  {
-    path:'Sprint-list',
-    component:SprintListComponent
-  },
-  {
-    path:'Sprint-details',
-    component:SprintDetailsComponent
-  }
+    path:'Sprint',
+    loadChildren:()=>import('./components/sprint/sprint.module').then(m=>m.SprintModule)
+   },
+  
 ];
 
 @NgModule({

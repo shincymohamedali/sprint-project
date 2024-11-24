@@ -18,11 +18,12 @@ getSprints(){
 this.sprints=this.service.getSprint();
 }
 onSelectSprint(sprint:Sprint){
-  this.router.navigate(["/Sprint-details"],{
+  this.router.navigate(["/Sprint/Sprint-details"],{
     queryParams:{
       id:sprint.id,
       name:sprint.sprintName
     }
   })
 }
+
 }
